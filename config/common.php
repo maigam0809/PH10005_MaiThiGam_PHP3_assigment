@@ -10,6 +10,12 @@ return [
             "users" => 1,
             "admin" => 2,
         ],
+    ],
+    'products' =>[
+        'status' =>[
+            "Active" => 1,
+            "Not Active" => 0,
+        ]
     ]
 ]
 ?>

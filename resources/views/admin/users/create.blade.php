@@ -22,12 +22,12 @@
 
                 <form method="post" action="{{ route('admin.users.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label class="sr-only ml-5"  for="exampleInputAmount">LastName</label>
                         <div class="input-group" >
-                            <div class="input-group-addon">LastName</div>
+                            <div class="input-group-addon" >LastName</div>
                             <input type="text" class="form-control"  name="last_name" value="{{old('last_name')}}"   id="exampleInputAmount" placeholder="LastName">
-                           
+
                         </div>
                         @error('last_name')
                             <span class="text-danger">{{ $message }}</span>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">FirstName</label>
                         <div class="input-group">
                           <div class="input-group-addon">FirstName</div>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Email</label>
                         <div class="input-group">
                           <div class="input-group-addon">Email</div>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Password</label>
                         <div class="input-group">
                           <div class="input-group-addon">Password</div>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Gender</label>
                         <div class="input-group">
                             <div class="input-group-addon">Gender</div>
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Address</label>
                         <div class="input-group">
                           <div class="input-group-addon">Address</div>
@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Image</label>
                         <div class="input-group">
                           <div class="input-group-addon">Image</div>
@@ -109,7 +109,7 @@
                         @enderror
                     </div>
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Role</label>
                         <div class="input-group">
                             <div class="input-group-addon">Role</div>
@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="form-group" style="margin-top: 17px;">
-                        
+
                         <label class="sr-only" for="exampleInputAmount">Birthday</label>
                         <div class="input-group">
                           <div class="input-group-addon">Birthday</div>
@@ -134,7 +134,7 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                    
+
                     <button type="submit" class="btn btn-default">Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 </form>

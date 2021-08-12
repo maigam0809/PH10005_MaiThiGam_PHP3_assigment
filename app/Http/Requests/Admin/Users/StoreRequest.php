@@ -15,14 +15,14 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'last_name' =>'required',
-            'first_name' =>'required',
+            'last_name' =>'required|string|min:3',
+            'first_name' =>'required|string|min:2',
             'email' =>'required|email|unique:users,email',
             'password' =>'required|min:8|max:50',
-            'address' =>'required|min:8',
+            'address' =>'required|min:8|regex:/([- ,\/0-9a-zA-Z]+)/',
             'role'=>'required|in:' . implode(',',config('common.users.role')),
             'gender'=>'required|in:' . implode(',',config('common.users.gender')),
-            'image' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|max:2048',
             'birthday' => 'required',
         ];
     }
@@ -31,11 +31,13 @@ class StoreRequest extends FormRequest
         return [
             'required' =>':attribute không được để trống.',
             'max' => ':attribute tối đa gồm 50 ký tự.',
+            'min:3' => ':attribute tối thiểu là 3 ký tự.',
+            'min:2' => ':attribute tối thiểu là 2 ký tự.',
             'in' => ':attribute giá trị không đúng.',
             'email' => ':attribute không đúng dạng email.',
             'unique' => ':attribute đã tồn tại.',
             'max:2048' => ':atribute có size nhỏ hơn 2MB',
-            'mimes'=>':attribute phải là ảnh dạng jpeg,png'
+            'image'=>':attribute phải là ảnh dạng ảnh.'
 
         ];
     }

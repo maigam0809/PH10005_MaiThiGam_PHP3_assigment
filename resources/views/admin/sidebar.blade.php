@@ -16,15 +16,29 @@
                 <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
             </li>
             {{-- students --}}
-            {{-- <li>
-                <a href="{{ route('students.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> students<span class="fa arrow"></span></a>
+            <li>
+                <a href="{{ route('admin.categories.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ route('students.index') }}">List students</a>
+                        <a href="{{ route('admin.categories.index') }}">List Categories</a>
                     </li>
                     <li>
 
-                        <a href="{{ route('students.add') }}">Add students</a>
+                        <a href="{{ route('admin.categories.create') }}">Add Categories</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+             {{-- Products --}}
+             <li>
+                <a href="{{ route('admin.products.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Products<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('admin.products.index') }}">List Products</a>
+                    </li>
+                    <li>
+
+                        <a href="{{ route('admin.products.create') }}">Add Products</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

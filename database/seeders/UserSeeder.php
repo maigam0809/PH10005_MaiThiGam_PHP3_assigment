@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
                 'first_name' => vnfaker()->firstame($word = 1),
                 'last_name' => vnfaker()->lastname($word = 1),
                 'email' => vnfaker()->email(),
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'password' => bcrypt(123456789),
                 'address' => vnfaker()->city(),
                 'birthday' => $faker->date(),
                 'image' => $arrImg[rand(0,12)],

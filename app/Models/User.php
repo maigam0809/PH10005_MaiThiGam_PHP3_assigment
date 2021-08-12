@@ -38,4 +38,9 @@ class User extends Authenticatable
         $hashed = bcrypt($value);
         $this->attributes['password'] = $hashed;
     }
+
+    public function commentsUser (){
+        return $this->hasMany(Comment::class);
+
+    }
 }
