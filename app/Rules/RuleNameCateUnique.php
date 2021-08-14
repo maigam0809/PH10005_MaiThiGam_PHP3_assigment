@@ -28,6 +28,6 @@ class RuleNameCateUnique implements Rule
 
     public function message()
     {
-        return 'Email này đã tồn tại.';
+        return 'Tên này đã tồn tại.';
     }
 }

@@ -9,18 +9,23 @@ use App\Http\Requests\Admin\Products\UpdateRequest;
 use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\User;
 
 class ProductController extends Controller
 {
     public function index(){
-        // $prod = Product::with('category')->find(13);
-        // dd($prod);
 
-        $listPro = Product::with('category')->orderBy('id','DESC')->limit(30)->get();
-        // $listPro = Product::all();
-        // dd($listPro);
+        $listPro = Product::with('category')->orderBy('id','ASC')->limit(30)->get();
         return view('admin/products/index',[
             'products'=>$listPro,
+        ]);
+    }
+
+    public function show(Product $product){
+        $users = User::all();
+         return view('admin/products/show',[
+            'product'=>$product,
+            'users'=>$users,
         ]);
     }
 

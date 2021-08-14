@@ -10,8 +10,9 @@ use App\Models\Product;
 class CategoryController extends Controller
 {
     public function index() {
-        // dd("ok");
         $categories = Category::simplePaginate(15);
+        $categories->load('products');
+        $category = $categories->first();
         return \response()->json($categories);
         return $this->response([
             'data' => CategoryResource::collection($categories)
@@ -27,6 +28,7 @@ class CategoryController extends Controller
         return $this->response([
             'data' => CategoryResource::collection($categories)
         ]);
+
     }
 
     public function update(Request $request, Category $category) {

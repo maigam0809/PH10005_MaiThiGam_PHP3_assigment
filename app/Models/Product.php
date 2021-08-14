@@ -36,4 +36,9 @@ class Product extends Model
         return $this->hasMany(Comment::class);
 
     }
+
+    public function invoicePro(){
+        return $this->hasMany(InvoiceDetail::class);
+
+    }
 }

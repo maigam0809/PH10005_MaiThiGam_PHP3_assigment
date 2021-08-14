@@ -13,6 +13,8 @@ class UserController extends Controller
 {
     public function index(){
         $listUsers = User::orderBy('id','DESC')->limit(30)->get();
+        $listUsers->load('invoices');
+        $users = $listUsers->first();
         return view('admin/users/index',[
             'users'=>$listUsers,
         ]);
@@ -20,6 +22,12 @@ class UserController extends Controller
 
     public function create(){
         return view('admin/users/create');
+    }
+
+    public function show(User $user){
+        return view('admin/users/show',[
+            'user'=>$user,
+        ]);
     }
 
     public function store(StoreRequest $request){

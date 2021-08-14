@@ -40,7 +40,9 @@
                     @foreach ($products as $item)
                     <tr class="odd gradeX " align="center">
                         <td>{{$item->id}}</td>
-                        <td>{{$item->name}}</td>
+                        <td>
+                            <a href="{{route('admin.products.show',['product'=>$item->id])}}">{{$item->name}}</a>
+                        </td>
                         <td>{{$item->price}}</td>
                         <td>{{$item->quantity}}</td>
                         <td>{{$item->category->name}}</td>

@@ -13,9 +13,12 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
+                <a href="{{ route('/') }}"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
             </li>
-            {{-- students --}}
+            <li>
+                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Thống kê</a>
+            </li>
+            {{-- Categories --}}
             <li>
                 <a href="{{ route('admin.categories.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -43,6 +46,40 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+              {{-- Invoices --}}
+             <li>
+                <a href="{{ route('admin.invoices.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Invoices<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('admin.invoices.index') }}">List invoices</a>
+                    </li>
+
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+              {{-- News --}}
+             <li>
+                <a href="{{ route('admin.news.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> News<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('admin.news.index') }}">List News</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.news.create') }}">Add News</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+              {{-- Contacts --}}
+              <li>
+                <a href="{{ route('admin.contacts.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> contacts<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('admin.contacts.index') }}">List contacts</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
             {{-- Users --}}
             <li>
                 <a href="{{route('admin.users.index')}}"><i class="fa fa-users fa-fw"></i>Users<span class="fa arrow"></span></a>
@@ -54,7 +91,7 @@
                         <a href="{{route('admin.users.create')}}">Add Users</a>
                     </li>
                 </ul>
-            </li> 
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

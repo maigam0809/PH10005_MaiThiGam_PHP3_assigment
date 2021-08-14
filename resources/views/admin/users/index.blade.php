@@ -44,8 +44,12 @@
                             {{$item->id}}
                         </td>
                         <td>
+                            <a href="{{route('admin.users.show',['user'=>$item->id])}}"> 
                             {{$item->last_name}}
                             {{$item->first_name}}
+                            </a>
+
+                           
                         </td>
                         <td>
                             {{$item->email}}
