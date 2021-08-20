@@ -15,11 +15,10 @@ class Contact extends Model
         'name',
         'phone',
         'email',
-        'address',
         'content',
         'status',
     ];
-    
+
     protected $table = 'contacts';
     protected $primariKey = 'id';
 

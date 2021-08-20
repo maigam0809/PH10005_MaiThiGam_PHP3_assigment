@@ -42,13 +42,14 @@
                         <td>
                             <a href="{{route('admin.categories.show',['category'=>$item->id])}}">{{$item->name}}</a>
                         </td>
-                      
+
                         <td>
                             {{$item->products->count()}}
                         </td>
                         <td>
                             <img src="{{ $item->image }}" alt="" width="50px;" height="50px;">
                         </td>
+                        
                         <td class="center" style="display:flex;">
                             <a class="btn btn-warning" href=" {{route('admin.categories.edit',['category'=>$item->id])}}">
                                 <i class="fa fa-pencil fa-fw"></i>

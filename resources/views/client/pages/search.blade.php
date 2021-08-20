@@ -1,5 +1,5 @@
 @extends('client.index')
-@section('title', 'Loại sản phẩm')
+@section('title', 'Sản phẩm tìm thấy')
 
 @section('contents')
 <div class="content content_sale">
@@ -216,7 +216,7 @@
                                         </a>
                                         <div class="product-info">
                                             <h3>
-                                                <a href="" class="product-name text3line">{{ $item->name }}</a>
+                                                <a href="{{ route('products.show',['product'=>$item->id]) }}" class="product-name text3line">{{ $item->name }}</a>
                                             </h3>
                                             <div class="price-box">
                                                 <span class="price">
@@ -257,8 +257,7 @@
                                 {{-- @foreach($cateID as $item) --}}
                                 <h2>
                                     <span>
-                                        {{ $category->name}}:
-                                        {{ $cateID->count()}}
+                                       Kết quả cho {{ $textSearch }}: {{ $textPro->count() }}
                                     </span>
                                 </h2>
                                 {{-- @endforeach --}}
@@ -268,7 +267,7 @@
                         <section class="products-view products-view-grid aside-content">
                             <div class="row row-noGutter-45">
                                 <!-- box-1 -->
-                                @foreach($cateID as $item)
+                                @foreach($textPro as $item)
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" style="  margin-bottom: 10px;">
                                     <div class="product_border">
                                         <div class="product-box-h">

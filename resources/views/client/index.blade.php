@@ -20,7 +20,7 @@
     <link href="frontend/css/style4.css" rel="stylesheet">
     <link href="frontend/css/style.css" rel="stylesheet">
     <link href="frontend/css/setting.css" rel="stylesheet">
-    <title>Home</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>

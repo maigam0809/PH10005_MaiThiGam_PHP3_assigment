@@ -11,7 +11,7 @@ class CateController extends Controller
     public function show(Category $category){
         $categories = Category::all();
         $categories->load('products');
-        $products = Product::orderBy('view','DESC')->limit(10)->get();
+        $products = Product::orderBy('view','DESC')->limit(5)->get();
 
         $cateID = Product::with('category')->where('category_id',$category->id)->limit(15)->get();
 

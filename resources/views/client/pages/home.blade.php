@@ -38,7 +38,7 @@
             <div class="product">
                 <div class="title_top_menu">
                     <span class="title-head">
-                        <a href="#" class="dk" title="Sản phẩm bán chạy">Sản phẩm bán chạy</a>
+                        <a href="#" class="dk" title="Sản phẩm bán chạy">Sản phẩm bán chạy nhất</a>
 
                     </span>
                 </div>
@@ -57,13 +57,16 @@
                                         </div>
                                         <div>
                                             <a class="like" href="#">
-                                                <i class="far fa-heart"></i>
+                                                <i class="far fa-heart">
+                                                    <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                                </i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-thumbnail">
                                         <a class="image_link" href="{{ route('products.show',['product'=>$item->id]) }}" title="{{ $item->name }}">
                                             <img class="lazyload loaded" src="{{ $item->image }}">
+
                                         </a>
                                         <div class="pro_action">
                                             <form action="" method="post">
@@ -78,9 +81,9 @@
                                         </h3>
                                         <div class="product-hides">
                                             <div class="price-box clearfix">
-                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}</span>
+                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}₫/kg</span>
                                                 <span class="price product-price-old">
-                                                    <del>{{ $item->price }}}</del>
+                                                    <del>{{ $item->price }} ₫/kg</del>
                                                 </span>
                                             </div>
                                         </div>
@@ -100,14 +103,17 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="like" href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
+                                            <i class="far fa-heart">
+                                                    <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                                </i>
                                         </div>
                                     </div>
                                     <div class="product-thumbnail">
                                         <a class="image_link" href="{{ route('products.show',['product'=>$item->id]) }}" title="Chuối Nam Mỹ">
+                                             <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+
                                             <img class="lazyload loaded" src="{{ $item->image }}">
+
                                         </a>
                                         <div class="pro_action">
                                             <form action="" method="post">
@@ -164,9 +170,9 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="like" href="#">
-                                            <i class="far fa-heart"></i>
-                                        </a>
+                                        <i class="far fa-heart">
+                                            <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                        </i>
                                     </div>
                                 </div>
                                 <div class="product-thumbnail">
@@ -222,14 +228,15 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="like" href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
+                                            <i class="far fa-heart">
+                                                <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                            </i>
                                         </div>
                                     </div>
                                     <div class="product-thumbnail">
                                         <a class="image_link" href="{{ route('products.show',['product'=>$item->id]) }}" title="Chuối Nam Mỹ">
                                             <img class="lazyload loaded" src="{{ $item->image }}">
+
                                         </a>
                                         <div class="pro_action">
                                             <form action="" method="post">
@@ -244,9 +251,9 @@
                                         </h3>
                                         <div class="product-hides">
                                             <div class="price-box clearfix">
-                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}</span>
+                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}₫/kg</span>
                                                 <span class="price product-price-old">
-                                                    <del>{{ $item->price }}}</del>
+                                                    <del>{{ $item->price }}₫/kg</del>
                                                 </span>
                                             </div>
                                         </div>
@@ -281,9 +288,9 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="like" href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
+                                           <i class="far fa-heart">
+                                                <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                            </i>
                                         </div>
                                     </div>
                                     <div class="product-thumbnail">
@@ -754,14 +761,15 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="like" href="#">
-                                            <i class="far fa-heart"></i>
-                                        </a>
+                                        <i class="far fa-heart">
+                                            <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                        </i>
                                     </div>
                                 </div>
                                 <div class="product-thumbnail">
                                     <a class="image_link" href="{{ route('products.show',['product'=>$item->id]) }}" title="{{ $item->name }}">
                                         <img class="lazyload loaded" src="{{ $item->image }}">
+
                                     </a>
                                     <div class="pro_action">
                                         <form action="" method="post">
@@ -822,9 +830,9 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="like" href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
+                                            <i class="far fa-heart">
+                                                <span class="badge badge-danger" style="background-color: #ff8e4a;">{{ $item->sale }}%</span>
+                                            </i>
                                         </div>
                                     </div>
                                     <div class="product-thumbnail">
@@ -844,9 +852,9 @@
                                         </h3>
                                         <div class="product-hides">
                                             <div class="price-box clearfix">
-                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}</span>
+                                                <span class="price product-price">{{ ($item->price - ($item->price* (($item->sale) /100)) ) }}₫/kg</span>
                                                 <span class="price product-price-old">
-                                                    <del>{{ $item->price }}</del>
+                                                    <del>{{ $item->price }}₫/kg</del>
                                                 </span>
                                             </div>
                                         </div>

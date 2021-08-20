@@ -23,8 +23,9 @@ class Product extends Model
         'view',
         'description',
         'detail',
+        'quantity_sold'
     ];
-    
+
     protected $table = 'products';
     protected $primariKey = 'id';
 
@@ -41,4 +42,9 @@ class Product extends Model
         return $this->hasMany(InvoiceDetail::class);
 
     }
+
+    // public function getPriceAttribute($value){
+    //     $newValue = $value ." VND";
+    //     return $newValue;
+    // }
 }

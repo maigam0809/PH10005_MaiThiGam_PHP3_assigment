@@ -30,15 +30,15 @@
                     </div>
                     <div class="flex">
                         <div class="header-middle">
-                            <form action="">
+                            <form action="{{ route('search') }}" method="get">
                                 <i class="fas fa-search"></i>
-                                <input type="text" placeholder="Tìm kiếm ở đây" required>
+                                <input type="text" name="search_text" value="{{ old('search_text') }}" placeholder="Tìm kiếm ở đây" required>
                                 <button>Tìm kiếm</button>
                             </form>
                             <div class="link">
-                                <a href="Bestseller.html">Bán chạy nhất</a> |
-                                <a href="new.html">Tin tức</a> |
-                                <a href="selling-products.html">Giảm giá</a>
+                                <a href="{{ route('products.selling') }}">Bán chạy nhất</a> |
+                                <a href="{{ route('news.index') }}">Tin tức</a> |
+                                <a href="{{ route('products.discount') }}">Giảm giá</a>
                             </div>
                         </div>
                         <div class="header-final">
@@ -71,7 +71,7 @@
                             </div>
                             <div class="detail btn">
                                 <i class="fas fa-shopping-bag"></i>
-                                <a href="cart.html">GIỎ HÀNG(0)</a>
+                                <a href="{{ route('cart') }}">GIỎ HÀNG(<?= isset ($_SESSION['totalQuantity'])?$_SESSION['totalQuantity']:"" ?>)</a>
                             </div>
                         </div>
                     </div>

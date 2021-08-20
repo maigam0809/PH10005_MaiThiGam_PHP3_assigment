@@ -35,7 +35,9 @@
                         <td>{{$user->id}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->active}}</td>
-                        <td>{{$user->image}}</td>
+                        <td>
+                            <img src="{{ $user->image }}" alt="" width="100px;">
+                        </td>
                         <td>{{$user->address}}</td>
                         <td>
                           {{$user->role == config('common.users.role.users') ? 'Users' : 'Admin'}}

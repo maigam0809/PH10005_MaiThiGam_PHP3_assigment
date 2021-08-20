@@ -53,24 +53,24 @@
                     </p>
                     <div class="d-flex">
                         <img class="img_bg" src="frontend/images/icon/i_footer_1.png" alt="">
-                        <p>Tầng 6 Ladeco, 266 Đội Cấn, Hà Nội</p>
+                        <p>Số 23/71 Đường Mỹ Đình, Quận Nam Từ Niêm, Thành phố Hà Nội</p>
                     </div>
                     <div class="d-flex">
                         <img class="img_bg" src="frontend/images/icon/i_footer_2.png" alt="">
-                        <p>18006750</p>
+                        <p>0344358618</p>
                     </div>
                     <div class="d-flex">
                         <img class="img_bg" src="frontend/images/icon/i_footer_3.png" alt="">
-                        <p>support@sapo.vn</p>
+                        <p>gammtph10005@fpt.edu.vn</p>
                     </div>
                 </div>
                 <ul class="item  item-list flex-column col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <h4>Trang</h4>
-                    <li> <a href="">Trang chủ</a></li>
-                    <li> <a href="">Giới thiệu</a></li>
-                    <li> <a href="">Sản phẩm</a></li>
-                    <li> <a href="">Tin tức</a></li>
-                    <li> <a href="">Liên hệ</a></li>
+                    <li> <a href="{{ route('/') }}">Trang chủ</a></li>
+                    <li> <a href="{{ route('/') }}">Giới thiệu</a></li>
+                    <li> <a href="{{ route('products.selling') }}">Sản phẩm</a></li>
+                    <li> <a href="{{ route('news.index') }}">Tin tức</a></li>
+                    <li> <a href="{{ route('contacts.index') }}">Liên hệ</a></li>
                 </ul>
 
                 <ul class="item item-list flex-column  col-lg-4 col-md-6 col-sm-12 col-xs-12">

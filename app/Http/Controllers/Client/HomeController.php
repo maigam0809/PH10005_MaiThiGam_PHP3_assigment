@@ -20,7 +20,7 @@ class HomeController extends Controller
         $cateTN = Product::with('category')->where('category_id',3)->limit(5)->get();
         $cateRC = Product::with('category')->where('category_id',1)->limit(10)->get();
 
-        $products = Product::orderBy('view','DESC')->limit(10)->get();
+        $products = Product::orderBy('quantity_sold','DESC')->limit(30)->get();
 
         return view('client/pages/home',[
             'categories'=>$categories,

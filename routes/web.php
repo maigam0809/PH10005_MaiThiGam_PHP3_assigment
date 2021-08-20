@@ -7,8 +7,7 @@ Route::post('admin/login','Auth\LoginController@login')->name('auth.login');
 Route::get('admin/logout','Auth\LoginController@logout')->name('auth.logout');
 
 Route::group(['middleware'=>['check_login']],function(){
-    Route::group(['prefix' =>'admin','as' => 'admin.','namespace' =>'Admin'],function(){
-
+    Route::group(['prefix' =>'admin','as' => 'admin.','namespace' =>'Admin','middleware'=>['check_admin']],function(){
         // 1. Users
         Route::group(['prefix' =>'users','as' => 'users.'],function(){
             Route::get('/','UserController@index')->name('index');
@@ -69,25 +68,33 @@ Route::group(['middleware'=>['check_login']],function(){
     });
 });
 
-
 // Clients Fontend
 Route::get('/', 'Client\HomeController@index')->name('/');
 Route::get('/categories/{category}', 'Client\CateController@show')->name('categories.show');
 Route::get('/products/{product}', 'Client\ProductController@index')->name('products.show');
+Route::post('/comments', 'Client\AjaxController@index')->name('comments.index');
 
+Route::get('/selling', 'Client\ProductController@selling')->name('products.selling');
+Route::get('/discount', 'Client\ProductController@discount')->name('products.discount');
+Route::get('/news', 'Client\NewController@index')->name('news.index');
+Route::get('/contacts', 'Client\ContactController@index')->name('contacts.index');
+Route::post('/contacts', 'Client\ContactController@store')->name('contacts.store');
+Route::get('/search', 'Client\SearchController@index')->name('search');
+
+// code Login
 Route::get('login', 'Auth\LoginController@getLoginFormClient')->name('client.getLoginFormClient');
 Route::post('login','Auth\LoginController@loginClient')->name('client.login');
 Route::get('logout','Auth\LoginController@logoutClient')->name('client.logout');
-
+// code register
 Route::get('register','Auth\LoginController@register')->name('register');
 Route::post('register','Auth\LoginController@store')->name('register.store');
 
+// Code cart
+Route::get('addToCart/{product?}', 'Client\CheckoutController@addProductToCart')->name('addToCart');
+Route::get('cart', 'Client\CheckoutController@showCart')->name('cart');
+Route::get('cart/delete/{product?}', 'Client\CheckoutController@deleteCart')->name('cart.delete');
+Route::get('product/create/{product?}', 'Client\CheckoutController@createQuantityPro')->name('createToCart');
+Route::get('product/update/{product?}', 'Client\CheckoutController@updateQuantityPro')->name('updateToCart');
 
-// Route::middleware('login_manage')->group(function () {
-    Route::post('add/{product}', 'Client\CheckoutController@add_product')->name('addproduct');
-    // Route::post('delete', 'Client\CheckoutController@delete')->name('delete');
-    // Route::get('checkout/cart', 'Client\CheckoutController@index')->name('checkout');
-    // Route::post('order', 'Client\OderController@create')->name('order');
-    // Route::get('order/history', 'TrackorderController@show')->name('trackorder');
-    // Route::get('order/view/{id}', 'TrackorderController@show_detail')->name('order.view');
-    // });
+Route::get('order', 'Client\CheckoutController@createOrder')->name('order');
+Route::get('contactBill', 'Client\CheckoutController@contactBill')->name('billcontact');
