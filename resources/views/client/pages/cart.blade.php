@@ -59,7 +59,7 @@
                 </tr>
                 @endforeach
                 {{-- <tr>
-                    <td class="final" colspan="4">Tổng tiền: {{number_format($item['totalPrice'])}} VND</td>
+                    <td class="final" colspan="4">Tổng tiền: {{number_format($item['data']['total_price'])}} VND</td>
                 </tr> --}}
             </table>
             <div class="cart-btn">

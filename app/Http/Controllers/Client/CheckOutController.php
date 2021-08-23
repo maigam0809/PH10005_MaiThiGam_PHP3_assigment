@@ -100,10 +100,10 @@ class CheckOutController extends Controller
         // xử lí code ở đây
     }
 
-    public function createOrder()
+    public function createOrder(Request $request)
     {
         $cart = Session::get('cart');
-        // dd($request);
+        // dd($cart);
         if (Auth::check()) {
             $user = Auth::user();
             // echo($user->id);
@@ -130,11 +130,32 @@ class CheckOutController extends Controller
                 );
                 $created_order_details = InvoiceDetail::insert($newItemInCurrentOrder);
             }
-
-            return redirect()->route('cart')->with('message',"Đặt hàng thành công");
+            // return redirect()->route('cart')->with('message',"Đặt hàng thành công");
             Session::forget("cart");
+            return redirect()->route('listBill',[
+                'billId' =>$createdOrder->id
+            ])->with('message','Đặt hàng thành công !');
+        }
+        else {
+            // view('client/pages/custom_info');
+            return redirect()->route('client.getLoginFormClient')->with('error','Bạn phải đăng nhập mới mua được hàng');
+        }
+    }
+
+    public function showBill($id)
+    {
+        $user = Auth::user();
+        $bill = Invoice::with(['user', 'invoiceDetails', 'invoiceDetails.product'])->where('user_id',$user->id)->find($id);
+    //    dd($bill->invoiceDetail->products);
+        if($bill) {
+            $categories = Category::with('products')->limit(5)->get();
+            // dd($categories);
+            return view('client.pages.bill', [
+                'bill' => $bill,
+                'categories' => $categories,
+            ]);
         } else {
-            view('client/pages/custom_info');
+            return redirect(404);
         }
     }
 

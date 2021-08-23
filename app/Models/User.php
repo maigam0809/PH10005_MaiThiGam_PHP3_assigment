@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     use SoftDeletes;
+    
     protected $fillable = [
         'first_name',
         'last_name',
@@ -29,7 +30,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

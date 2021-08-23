@@ -21,6 +21,7 @@ class CartController extends Controller
             $this->items = $prevCart->items;
             $this->totalQuantity = $prevCart->totalQuantity;
             $this->totalPrice = $prevCart->totalPrice;
+
         } else {
             $this->items = [];
             $this->totalQuantity = 0;
@@ -33,21 +34,23 @@ class CartController extends Controller
         // dd($product);
         $price = (int)str_replace("$", "", $product->price);
         // dd($price);
+        $priceSale = ($product->price - ($product->price*($product->sale/100)));
 
+        // dd($priceSale);
         if (array_key_exists($product->id,$this->items)) {
             $productToAdd = $this->items[$product->id];
             $productToAdd['quantity']++;
-            $productToAdd['totalSinglePrice'] = $productToAdd['quantity'] * $price;
+            $productToAdd['totalSinglePrice'] = $productToAdd['quantity'] * $priceSale;
         } else {
             $productToAdd = [
                 'quantity' => 1,
-                'totalSinglePrice' => $price,
+                'totalSinglePrice' => $priceSale,
                 'data' => $product
             ];
         }
         $this->items[$product->id] = $productToAdd;
         $this->totalQuantity++;
-        $this->totalPrice = $this->totalPrice + $price;
+        $this->totalPrice = $this->totalPrice + $priceSale;
     }
 
     public function update()
@@ -60,6 +63,7 @@ class CartController extends Controller
         }
         $this->totalQuantity = $totalQuantity;
         $this->totalPrice = $totalPrice;
+
     }
 
 

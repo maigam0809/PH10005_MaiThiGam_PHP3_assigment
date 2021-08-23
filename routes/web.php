@@ -97,4 +97,5 @@ Route::get('product/create/{product?}', 'Client\CheckoutController@createQuantit
 Route::get('product/update/{product?}', 'Client\CheckoutController@updateQuantityPro')->name('updateToCart');
 
 Route::get('order', 'Client\CheckoutController@createOrder')->name('order');
-Route::get('contactBill', 'Client\CheckoutController@contactBill')->name('billcontact');
+// Route::get('contactBill', 'Client\CheckoutController@contactBill')->name('billcontact');
+Route::get('listBill/{billId}', 'Client\CheckoutController@showBill')->name('listBill');
